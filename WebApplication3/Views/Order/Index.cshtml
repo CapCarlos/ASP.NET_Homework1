@@ -1,0 +1,67 @@
+﻿@model WebApplication3.Models.Order
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h3>訂單查詢</h3>
+
+        <table style="border:3px #cccccc solid;">
+            
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.OrderId)
+                </td>
+                <td colspan="3">
+                   
+                   @Html.TextBoxFor(model => model.OrderId)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CustName)
+                </td>
+                <td colspan="3">
+
+                    @Html.TextBoxFor(model => model.CustName)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmpName)
+                </td>
+                <td colspan="3">
+
+                 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.ShipperName)
+                </td>
+                <td colspan="3">
+                   
+                   
+                </td>
+            </tr>
+
+
+        </table>
+
+
+</div>
+</body>
+</html>
