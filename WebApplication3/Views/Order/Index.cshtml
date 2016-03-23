@@ -14,6 +14,8 @@
     <title>Index</title>
 </head>
 <body>
+    <form>
+
     <div> 
         <h3>訂單查詢</h3>
 
@@ -44,7 +46,13 @@
                     @Html.LabelFor(model => model.EmpName)
                 </td>
                 <td colspan="3">
+                        @Html.DropDownList("Employee", new List<SelectListItem>()
+                        {
+                            new SelectListItem(){ Text= "員工1", Value = "1"},
+                            new SelectListItem(){ Text= "員工2", Value = "2"},
+                            new SelectListItem(){ Text= "員工3", Value = "3"},
 
+                        }, "選擇員工")
                  
                 </td>
             </tr>
@@ -53,14 +61,55 @@
                     @Html.LabelFor(model => model.ShipperName)
                 </td>
                 <td colspan="3">
+                    @Html.DropDownList("Shipper", new List<SelectListItem>()
+                        {
+                            new SelectListItem(){ Text= "公司1", Value = "1"},
+                            new SelectListItem(){ Text= "公司2", Value = "2"},
+                            new SelectListItem(){ Text= "公司3", Value = "3"},
+
+                        }, "選擇公司")
                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Orderdate)
+                </td>
+                <td>
+
+                    @Html.TextBoxFor(model => model.Orderdate, new { @type = "date" })
+                </td>
+                <td>
+                    @Html.LabelFor(model => model.ShippedDate)
+                </td>
+                <td>
                    
+                   @Html.TextBoxFor(model => model.ShippedDate, new { @type = "date" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.RequireDdate)
+                </td>
+                <td colspan="3">
+                    @Html.TextBoxFor(model => model.RequireDdate, new { @type = "date" })
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  
+                </td>
+                <td colspan="3">
+                    <input type="submit" value="查詢"><input type="reset" value="清除"><input type="button" value="新增訂單" />
+
                 </td>
             </tr>
 
 
         </table>
 
+        </form>
 
 </div>
 </body>
